@@ -1,0 +1,149 @@
+/* ------------ Imports ------------ */
+@import "styles/style.scss";
+
+/* ------------ Todo App ------------ */
+
+.container {
+    display: grid;
+    place-items: center;
+
+    width: 100%;
+    min-height: 100vh;
+
+    background: linear-gradient(135deg, #153677, #4e085f);
+}
+
+.todo-app {
+    width: 100%;
+    max-width: 540px;
+
+    border-radius: $border-radius;
+    padding: $padding-large;
+
+    background: $color-white;
+
+    h2 {
+        display: flex;
+        align-items: center;
+
+        font-size: 2rem;
+
+        img {
+            width: 2.5rem;
+
+            margin-left: $margin-small;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: $border-radius;
+    margin: $margin-medium 0;
+    padding-left: $padding-medium;
+
+    background: $color-bg-light-grey;
+
+    input {
+        flex: 1;
+
+        font-size: 1.25rem;
+
+        background: transparent;
+    }
+
+    button {
+        border-radius: $border-radius;
+        padding: $padding-medium;
+
+        cursor: pointer;
+
+        background: $color-red-light;
+
+        &:hover {
+            //background: $color-red-light;
+
+            transition: $transition;
+        }
+    }
+}
+
+#list-container {
+    display: flex;
+    flex-direction: column;
+    //gap: 0.25rem;
+
+    position: relative;
+
+    li {
+        display: flex;
+        align-items: center;
+
+        padding: 1rem 0;
+        padding-left: 4rem;
+
+        //padding: $padding-small $padding-medium;
+
+        cursor: pointer;
+        user-select: none;
+
+        font-size: 1.25rem;
+
+        &::before {
+            content: "";
+
+            position: absolute;
+
+            width: 1.75rem;
+            height: 1.75rem;
+
+            //border: 0.2rem solid $color-grey-light;
+            //border-radius: 50%;
+
+            background-image: url("../images/check-box.png");
+            background-size: cover;
+            //background-color: $color-white;
+
+            left: 0.5rem;
+            //top: 0.4rem;
+        }
+    }
+
+    .checked {
+        text-decoration: line-through;
+
+        color: $color-grey-light;
+
+        &::before {
+            background-image: url("../images/tick.png");
+        }
+    }
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        position: absolute;
+        right: 0.5rem;
+
+        width: 1.75rem;
+        height: 1.75rem;
+
+        border-radius: 50%;
+
+        font-size: 1.5rem;
+    
+        color: #555;
+
+        &:hover {
+            background-color: $color-red-light;
+
+            transition: $transition;
+        }
+    }
+}
