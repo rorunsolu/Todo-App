@@ -64,7 +64,10 @@
         background: $color-red-light;
 
         &:hover {
-            //background: $color-red-light;
+
+            outline: 1px solid $color-red-light;
+
+            background-color: $color-white;
 
             transition: $transition;
         }
@@ -74,7 +77,6 @@
 #list-container {
     display: flex;
     flex-direction: column;
-    //gap: 0.25rem;
 
     position: relative;
 
@@ -84,8 +86,6 @@
 
         padding: 1rem 0;
         padding-left: 4rem;
-
-        //padding: $padding-small $padding-medium;
 
         cursor: pointer;
         user-select: none;
@@ -100,15 +100,11 @@
             width: 1.75rem;
             height: 1.75rem;
 
-            //border: 0.2rem solid $color-grey-light;
-            //border-radius: 50%;
-
             background-image: url("../images/check-box.png");
             background-size: cover;
-            //background-color: $color-white;
 
             left: 0.5rem;
-            //top: 0.4rem;
+
         }
     }
 
